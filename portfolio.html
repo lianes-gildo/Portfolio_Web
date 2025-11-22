@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Lianes Gildo Nhacula</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Portfólio Web</div>
+            <ul>
+                <li><a href="capa.html">Inicio</a></li>
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#formulario">Contacto</a></li>
+                <li><a href="#autoavaliacao">Autoavaliação</a></li>
+                <li><a href="#conclusao">Conclusão</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="introducao">
+            <h1>Portfólio de Programação Web</h1>
+            <p><strong>Discente:</strong> Lianes Gildo Nhacula | <strong>Codigo de Estudante:</strong> 202301079</p>
+            
+            <h2>Introdução</h2>
+            <p>
+                Este portfólio foi desenvolvido no âmbito da disciplina de Programação Web, com o objetivo 
+                de demonstrar as competências adquiridas ao longo do semestre. O trabalho apresenta uma 
+                compilação de projetos práticos que abrangem as principais tecnologias da web moderna.
+            </p>
+            <p>
+                Ao longo desta disciplina, foram exploradas diversas tecnologias fundamentais para o 
+                desenvolvimento web, incluindo HTML para estruturação de conteúdo, CSS para estilização 
+                e design responsivo, JavaScript para interatividade e manipulação dinâmica de dados, e 
+                PHP para processamento do lado do servidor.
+            </p>
+            <p>
+                O portfólio está organizado de forma a demonstrar a evolução do aprendizado, desde 
+                conceitos básicos até implementações mais complexas, incluindo validação de formulários, 
+                manipulação de dados, criação de interfaces interativas e integração de diferentes tecnologias.
+            </p>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos Desenvolvidos</h2>
+            
+            <div class="projetos-grid">
+                <div class="projeto-card">
+                    <h3>1. Website Responsivo</h3>
+                    <p>Desenvolvimento de uma página web responsiva utilizando HTML5 e CSS3, com design 
+                    adaptável a diferentes dispositivos e tamanhos de tela.</p>
+                    <div class="tecnologias">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                    </div>
+                </div>
+                
+                <div class="projeto-card">
+                    <h3>2. Formulário com Validação</h3>
+                    <p>Criação de formulário interativo com validação de dados em tempo real usando 
+                    JavaScript, garantindo a integridade das informações inseridas.</p>
+                    <div class="tecnologias">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="projeto-card">
+                    <h3>3. Calculadora Interativa</h3>
+                    <p>Implementação de uma calculadora funcional com operações matemáticas básicas, 
+                    demonstrando manipulação de eventos e lógica de programação.</p>
+                    <div class="tecnologias">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                </div>
+                
+                <div class="projeto-card">
+                    <h3>4. Sistema de Navegação</h3>
+                    <p>Desenvolvimento de menu de navegação interativo com efeitos visuais e 
+                    comportamento responsivo para melhor experiência do utilizador.</p>
+                    <div class="tecnologias">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora">
+            <h2>Calculadora Interativa</h2>
+            <p>Demonstração prática de manipulação de dados e eventos com JavaScript:</p>
+            
+            <div class="calculadora">
+                <input type="text" class="calc-display" id="display" readonly value="0">
+                <div class="calc-buttons">
+                    <button class="calc-btn" onclick="addToDisplay('7')">7</button>
+                    <button class="calc-btn" onclick="addToDisplay('8')">8</button>
+                    <button class="calc-btn" onclick="addToDisplay('9')">9</button>
+                    <button class="calc-btn operator" onclick="addToDisplay('/')">/</button>
+                    
+                    <button class="calc-btn" onclick="addToDisplay('4')">4</button>
+                    <button class="calc-btn" onclick="addToDisplay('5')">5</button>
+                    <button class="calc-btn" onclick="addToDisplay('6')">6</button>
+                    <button class="calc-btn operator" onclick="addToDisplay('*')">×</button>
+                    
+                    <button class="calc-btn" onclick="addToDisplay('1')">1</button>
+                    <button class="calc-btn" onclick="addToDisplay('2')">2</button>
+                    <button class="calc-btn" onclick="addToDisplay('3')">3</button>
+                    <button class="calc-btn operator" onclick="addToDisplay('-')">-</button>
+                    
+                    <button class="calc-btn" onclick="addToDisplay('0')">0</button>
+                    <button class="calc-btn" onclick="addToDisplay('.')">.</button>
+                    <button class="calc-btn operator" onclick="calculate()">=</button>
+                    <button class="calc-btn operator" onclick="addToDisplay('+')">+</button>
+                    
+                    <button class="calc-btn clear" onclick="clearDisplay()" style="grid-column: span 4;">Limpar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="formulario">
+            <h2>Formulário de Contacto com Validação</h2>
+            <p>Demonstração de validação de formulários e manipulação de dados:</p>
+            
+            <form id="contactForm" onsubmit="return validateForm(event)">
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <span class="error" id="nomeError">Por favor, insira seu nome completo.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error" id="emailError">Por favor, insira um email válido.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" pattern="[0-9]{9,}" required>
+                    <span class="error" id="telefoneError">Por favor, insira um número de telefone válido (mínimo 9 dígitos).</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione...</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <span class="error" id="assuntoError">Por favor, selecione um assunto.</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                    <span class="error" id="mensagemError">Por favor, escreva sua mensagem.</span>
+                </div>
+                
+                <button type="submit">Enviar Mensagem</button>
+                
+                <div class="success" id="successMessage">
+                    Mensagem enviada com sucesso! Obrigado pelo seu contacto.
+                </div>
+            </form>
+        </section>
+
+        <section id="autoavaliacao">
+            <h2>Autoavaliação</h2>
+            
+            <p>
+                Durante o desenvolvimento deste portfólio e ao longo da disciplina de Programação Web, 
+                foi possível adquirir competências técnicas fundamentais para o desenvolvimento de 
+                aplicações web modernas e funcionais.
+            </p>
+            
+            <h3>Competências Adquiridas:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Competência</th>
+                        <th>Nível de Domínio</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML5 - Estruturação</td>
+                        <td>Bom</td>
+                        <td>Domínio de tags semânticas e estruturação adequada</td>
+                    </tr>
+                    <tr>
+                        <td>CSS3 - Estilização</td>
+                        <td>Bom</td>
+                        <td>Aplicação de estilos, layouts responsivos e animações</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript - Programação</td>
+                        <td>Satisfatório</td>
+                        <td>Manipulação de DOM, eventos e validações</td>
+                    </tr>
+                    <tr>
+                        <td>Design Responsivo</td>
+                        <td>Bom</td>
+                        <td>Criação de interfaces adaptáveis a diferentes dispositivos</td>
+                    </tr>
+                    <tr>
+                        <td>Validação de Formulários</td>
+                        <td>Bom</td>
+                        <td>Implementação de validações client-side eficazes</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Reflexão sobre o Aprendizado:</h3>
+            <p>
+                O processo de desenvolvimento deste portfólio permitiu consolidar conhecimentos teóricos 
+                através da prática, enfrentando desafios reais de programação web. As principais 
+                dificuldades encontradas incluíram a gestão de eventos em JavaScript e a criação de 
+                layouts responsivos complexos, que foram superadas através de pesquisa, experimentação 
+                e aplicação dos conceitos aprendidos em aula.
+            </p>
+            <p>
+                A experiência adquirida com a validação de formulários e manipulação de dados demonstrou 
+                a importância da segurança e usabilidade em aplicações web. A integração de diferentes 
+                tecnologias (HTML, CSS, JavaScript) revelou-se essencial para criar experiências de 
+                utilizador coesas e funcionais.
+            </p>
+        </section>
+
+        <section id="conclusao">
+            <h2>Conclusão</h2>
+            <p>
+                Este portfólio representa o culminar de um semestre de aprendizado intensivo em 
+                Programação Web, demonstrando a evolução desde conceitos fundamentais até a capacidade 
+                de desenvolver aplicações web funcionais e interativas.
+            </p>
+            <p>
+                As tecnologias estudadas - HTML, CSS, JavaScript e PHP - formam a base essencial para 
+                o desenvolvimento web moderno. A compreensão de como estas tecnologias se complementam 
+                e interagem é fundamental para criar soluções web eficazes e eficientes.
+            </p>
+            <p>
+                Os projetos desenvolvidos ao longo da disciplina não apenas demonstram competência 
+                técnica, mas também revelam a capacidade de resolver problemas práticos através da 
+                programação. A validação de formulários, manipulação de dados, criação de interfaces 
+                responsivas e implementação de funcionalidades interativas são habilidades que serão 
+                aplicadas em projetos futuros.
+            </p>
+            <p>
+                O conhecimento adquirido nesta disciplina estabelece uma base sólida para a continuação 
+                dos estudos em desenvolvimento web, incluindo frameworks modernos, desenvolvimento 
+                back-end avançado e integração com bases de dados. A experiência prática obtida através 
+                deste portfólio será valiosa para futuros desafios profissionais e académicos na área 
+                de tecnologia da informação.
+            </p>
+            <p>
+                Agradeço ao docente Mestre Emilson Dava pela orientação e pelos conhecimentos transmitidos 
+                ao longo desta jornada de aprendizado em Programação Web.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Lianes Gildo Nhacula - Portfólio de Programação Web</p>
+        <p>Universidade Sao Tomas de Mocambique</p>
+    </footer>
+</body>
+</html>
